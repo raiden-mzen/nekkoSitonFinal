@@ -1,0 +1,95 @@
+.our-process-page-container {
+    padding: 4rem 2rem;
+    height: 100vh;
+    width: 100vh;
+    color: #fff; /* White text for the section */
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #8b0000;
+}
+
+.our-process-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+   color: #fff; /* White title */
+  margin-bottom: 3rem;
+}
+
+.process-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.process-step {
+  text-align: center;
+}
+
+.process-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background-color: #fff; /* White background for icon wrapper */
+  color: #8b0000; /* Dark red icon color */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.process-step:hover .process-icon-wrapper {
+  transform: scale(1.1);
+  background-color: #f1f1f1; /* Slightly off-white on hover */
+}
+
+.process-step h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #fff; /* White heading */
+}
+.process-step p {
+  color: #f1f1f1; /* Light gray for description text */
+}
+
+@media (max-width: 768px) {
+  .our-process-page-container {
+    margin-top: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .our-process-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .process-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .process-step {
+    padding: 1.25rem 1rem;
+    border-radius: 12px;
+  }
+
+  .process-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 1rem;
+  }
+
+  .process-step h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .process-step p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}

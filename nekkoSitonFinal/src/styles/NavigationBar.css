@@ -1,0 +1,308 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+}
+
+.navbar.scrolled {
+  background-color: #8b0000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); /* Elevated effect */
+  padding: 0.75rem 2rem;
+}
+
+.navbar-logo {
+    margin-top: 10px;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+  color: #ffffff; /* Text is already white, but this ensures consistency */
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+  width: 100%;
+}
+
+.navbar-link-icon {
+  transition: transform 0.3s ease;
+}
+
+.navbar-link:hover .navbar-link-icon {
+  transform: scale(1.2);
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.navbar-toggle-icon {
+  width: 28px;
+  height: 3px;
+  background-color: #ffffff;
+  display: block;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-toggle-icon::before,
+.navbar-toggle-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.navbar-toggle-icon::before { top: -8px; }
+.navbar-toggle-icon::after { top: 8px; }
+
+.navbar-toggle.active .navbar-toggle-icon {
+  background-color: transparent;
+}
+
+.navbar-toggle.active .navbar-toggle-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggle.active .navbar-toggle-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbar.scrolled {
+    padding: 0.75rem 1rem;
+  }
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen */
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: rgba(139, 0, 0, 0.9); /* Dark red with blur */
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .navbar-links.active {
+    right: 0; /* Slide in from the right */
+  }
+
+  .navbar-link {
+    font-size: 1.2rem;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+}
+
+/* Circular Toggle Button */
+.nav-toggle-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #8b0000;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s;
+}
+
+.nav-toggle-button:hover {
+  transform: scale(1.1);
+}
+
+.nav-toggle-icon {
+  width: 28px;
+  height: 3px;
+  background-color: #ffffff;
+  display: block;
+  position: relative;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), top 0.3s ease;
+}
+
+.nav-toggle-icon::before { top: -8px; }
+.nav-toggle-icon::after { top: 8px; }
+
+.nav-toggle-button.active .nav-toggle-icon {
+  background-color: transparent;
+}
+
+.nav-toggle-button.active .nav-toggle-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-toggle-button.active .nav-toggle-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Navigation Overlay */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px; /* Width of the side menu */
+  height: 100%;
+  background-color: rgba(139, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: 5px 0 25px rgba(0,0,0,0.2);
+}
+
+.nav-overlay.open {
+  transform: translateX(0);
+}
+
+.nav-overlay-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.nav-overlay-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 0.5s forwards;
+}
+
+.nav-overlay-link {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.nav-overlay-link:hover {
+  transform: scale(1.1);
+  color: #ffdddd;
+}
+
+.nav-overlay-icon {
+  display: inline-block;
+}
+
+@keyframes fadeInSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .nav-toggle-button {
+    width: 50px;
+    height: 50px;
+    top: 15px;
+    left: 15px;
+  }
+  .nav-toggle-icon {
+    width: 24px;
+  }
+  .nav-overlay {
+    width: 250px; /* Narrower menu on small screens */
+  }
+  .nav-overlay-link {
+    font-size: 1.5rem;
+  }
+}

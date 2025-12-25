@@ -1,0 +1,563 @@
+/* Login Page Styles - NEKO SITON */
+
+* {
+  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    
+    margin-top: -50px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Main Container */
+  .login-container {
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    min-height: 100vh;
+    background: #000;
+    animation: fadeIn 0.6s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Left Side - Brand */
+  .login-brand {
+    flex: 1;
+    background: linear-gradient(135deg, #8b0000 0%, #5c0000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .login-brand::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    top: -200px;
+    right: -200px;
+  }
+  
+  .brand-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    max-width: 500px;
+  }
+  
+  .brand-logo {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .brand-tagline {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+  }
+  
+  .brand-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature:hover {
+    transform: translateX(10px);
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+  }
+  
+  .feature span:last-child {
+    font-size: 1.1rem;
+  }
+  
+  /* Right Side - Form */
+  .login-form-section {
+    
+    flex: 1;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  
+  .login-form-container {
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  /* User Type Toggle */
+  .user-type-toggle {
+    
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background: #f5f5f5;
+    padding: 0.5rem;
+    border-radius: 12px;
+  }
+  
+  .toggle-btn {
+    flex: 1;
+    padding: 0.875rem;
+    border: none;
+    background: transparent;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .toggle-btn.active {
+    background: #8b0000;
+    color: white;
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+  }
+  
+  .toggle-btn:hover:not(.active) {
+    background: rgba(139, 0, 0, 0.1);
+  }
+  
+  /* Form Header */
+  .form-header {
+    margin-bottom: 2rem;
+  }
+  
+  .form-header h2 {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-header p {
+    color: #666;
+    font-size: 0.95rem;
+  }
+  
+  /* Form */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+  }
+  
+  /* Input with Icon */
+  .input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 1rem;
+    font-size: 1.25rem;
+    color: #666;
+    
+    pointer-events: none;
+  }
+  
+  .input-with-icon input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #111827;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+  
+  .input-with-icon input:focus {
+    border-color: #8b0000;
+    box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+  }
+  
+  .input-with-icon input:focus ~ .input-icon {
+    color: #8b0000;
+  }
+  
+  .input-with-icon input::placeholder {
+    padding-left: 25px;
+    color: #9ca3af;
+  }
+
+  .input-icon.hide {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.2s ease;
+  }
+  
+  /* EXCEPTION: Password visibility toggle must always show */
+  .password-toggle {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Password Toggle */
+  .password-toggle {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+  
+  .password-toggle:hover {
+    color: #8b0000;
+  }
+  
+  .form-group input {
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #111827;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+  
+  .form-group input:focus {
+    border-color: #8b0000;
+    box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+  }
+  
+  .form-group input::placeholder {
+    color: #9ca3af;
+  }
+  
+  /* Form Options */
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .remember-me input {
+    cursor: pointer;
+  }
+  
+  .forgot-password {
+    color: #8b0000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    background-color: #ffffff;
+  }
+  
+  .forgot-password:hover {
+    color: #5c0000;
+    text-decoration: underline;
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    padding: 1rem;
+    background: #8b0000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+  }
+  
+  .submit-btn:hover {
+    background: #5c0000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+  }
+  
+  .submit-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Form Footer */
+  .form-footer {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 1rem;
+  }
+  
+  .form-footer p {
+    color: #666;
+    font-size: 0.95rem;
+  }
+  
+  .toggle-link {
+    background: none;
+    border: none;
+    color: #8b0000;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .toggle-link:hover {
+    color: #5c0000;
+    text-decoration: underline;
+  }
+  
+  /* Tablet (768px and up) */
+  @media (min-width: 768px) {
+    .brand-logo {
+      font-size: 3.5rem;
+    }
+  
+    .brand-tagline {
+      font-size: 1.75rem;
+    }
+  
+    .login-form-section {
+      padding: 60px 40px;
+    }
+  
+    .form-header h2 {
+      font-size: 2.25rem;
+    }
+  }
+  
+  /* Desktop (1024px and up) */
+  @media (min-width: 1024px) {
+    .brand-logo {
+      font-size: 4rem;
+    }
+  
+    .login-form-container {
+      max-width: 500px;
+    }
+  }
+  
+  /* Mobile (max-width: 968px) */
+  @media (max-width: 968px) {
+    .login-container {
+      flex-direction: column;
+    }
+  
+    .login-brand {
+      min-height: 300px;
+    }
+  
+    .brand-logo {
+      font-size: 2rem;
+    }
+  
+    .brand-tagline {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .brand-features {
+      display: none;
+    }
+  
+    .login-form-section {
+      padding: 40px 24px;
+    }
+  }
+  
+  /* Small Mobile (max-width: 480px) */
+  @media (max-width: 480px) {
+    .login-brand {
+      min-height: 250px;
+      padding: 30px 20px;
+    }
+  
+    .brand-logo {
+      font-size: 1.75rem;
+    }
+  
+    .brand-tagline {
+      font-size: 1rem;
+    }
+  
+    .login-form-section {
+      padding: 30px 16px;
+    }
+  
+    .login-form-container {
+      max-width: 100%;
+    }
+  
+    .form-header h2 {
+      font-size: 1.5rem;
+    }
+  
+    .form-header p {
+      font-size: 0.85rem;
+    }
+  }
+
+.notice-box {
+  display: none; /* Replaced by new popup */
+}
+
+/* =================================
+   POPUP STYLES
+==================================== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  border-top: 5px solid #8b0000;
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popup-content p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.popup-close-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #555;
+  color: white;
+  min-width: 100px;
+}
+
+.popup-close-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Popup Types */
+.popup-overlay.success .popup-content {
+  border-top-color: #28a745;
+}
+.popup-overlay.success .popup-close-btn {
+  background: #28a745;
+}
+.popup-overlay.success .popup-close-btn:hover {
+  background: #218838;
+}
+
+.popup-overlay.error .popup-content {
+  border-top-color: #dc3545;
+}
+.popup-overlay.error .popup-close-btn {
+  background: #dc3545;
+}
+.popup-overlay.error .popup-close-btn:hover {
+  background: #c82333;
+}
+
+.popup-overlay.info .popup-content {
+  border-top-color: #17a2b8;
+}
+.popup-overlay.info .popup-close-btn {
+  background: #17a2b8;
+}
+.popup-overlay.info .popup-close-btn:hover {
+  background: #138496;
+}

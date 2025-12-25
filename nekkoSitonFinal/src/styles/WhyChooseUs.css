@@ -1,0 +1,111 @@
+.why-choose-us-container {
+ display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+   height: 105vh;
+   
+  background-color: #8b0000; /* Dark red background */
+  color: #fff; /* White text */
+}
+
+.why-choose-us-section {
+  padding: 4rem 2rem;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff; /* White icon */
+   background-color: #8b0000; /* Dark red background */
+}
+.feature-icon {
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 0.8rem;
+    font-size: 1.1rem;
+}
+
+h2.section-title-choose{
+    color:white;
+    margin-bottom: 5rem;
+    text-align: center;
+     font-size: 2.5rem;
+      font-weight: 600;
+}
+.section-title-choose {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ffffff; /* White title */
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2rem;
+  background: #a52a2a; /* Slightly lighter red for cards */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+ color: #fff; /* White icon */
+  margin-bottom: 1.5rem;
+}
+
+.feature-title {
+   font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff; /* White feature title */
+}
+
+.feature-description {
+      color: #f1f1f1; /* Light gray for description */
+}
+
+@media (max-width: 768px) {
+  .why-choose-us-section {
+    padding: 2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem; /* Further reduced font size */
+    margin-bottom: 2rem; /* Reduced margin */
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* Reduced gap */
+  }
+
+  .feature-card {
+    padding: 1rem; /* Reduced padding */
+  }
+
+  .feature-icon {
+    margin-bottom: 1rem; /* Reduced margin */
+  }
+
+  .feature-title {
+    font-size: 1.1rem; /* Further reduced font size */
+  }
+
+  .feature-description {
+    font-size: 0.9rem; /* Reduced font size */
+  }
+}
